@@ -1,6 +1,6 @@
 import { Request } from '@cap-js/cds-types';
 
-module.exports = class Say {
+export class Say {
   hello(req: Request) {
     return `Hello ${req.data.to || 'Unknown'} from luck-system`;
   }
@@ -9,10 +9,10 @@ module.exports = class Say {
     const { a, b } = req.data;
     return a + b;
   }
-};
+}
 
-module.exports = class Luck {
+export class Luck {
   randomLuck(req: Request) {
     return Math.floor(Math.random() * 100);
   }
-};
+}
