@@ -1,4 +1,4 @@
-POST http://localhost:4004/odata/v4/say/sum HTTP/1.1
+POST http://localhost:4004/odata/v4/say/sum
 content-type: application/json
 
 {
@@ -8,11 +8,11 @@ content-type: application/json
 
 ###
 
-POST http://localhost:4004/odata/v4/say/hello HTTP/1.1
+POST http://localhost:4004/odata/v4/say/hello
 content-type: application/json
 
 {
-  "to": "Lucas"
+  "to": ""
 }
 
 ###

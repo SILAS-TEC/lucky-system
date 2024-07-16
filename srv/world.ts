@@ -1,8 +1,9 @@
+import { userInfo } from 'os';
 import { Request } from '@cap-js/cds-types';
 
 export class Say {
   hello(req: Request) {
-    return `Hello ${req.data.to || 'Unknown'} from luck-system`;
+    return `Hello ${req.data.to || userInfo().username} from luck-system`;
   }
 
   sum(req: Request) {

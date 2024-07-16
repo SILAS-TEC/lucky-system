@@ -17,5 +17,13 @@
   },
   "scripts": {
     "start": "cds-ts serve"
+  },
+  "cds": { 
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": { "url": "db/my-bookshop.sqlite" }
+      }
+    }
   }
 }
