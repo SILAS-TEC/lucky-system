@@ -1,4 +1,4 @@
-import { Request } from '@sap/cds';
+import { Request } from '@cap-js/cds-types';
 
 module.exports = class Say {
   hello(req: Request) {
