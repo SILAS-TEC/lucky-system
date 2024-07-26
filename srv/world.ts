@@ -16,3 +16,9 @@ module.exports = class Luck {
     return Math.floor(Math.random() * 100);
   }
 };
+
+module.exports = class Test {
+  teste(req:Request){
+    return "oi" + req
+  }
+}

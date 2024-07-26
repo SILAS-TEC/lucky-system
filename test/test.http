@@ -18,3 +18,9 @@ Content-Type: application/json
 ###
 
 GET http://localhost:4004/odata/v4/luck/randomLuck
+
+
+
+
+POST http://localhost:4004/odata/v4/test/teste HTTP/1.1
+Content-Type: application/json
