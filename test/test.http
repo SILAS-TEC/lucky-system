@@ -1,5 +1,5 @@
 POST https://example.com/comments HTTP/1.1
-content-type: application/json
+Content-Type: application/json
 
 {
     "name": "sample",
@@ -9,7 +9,7 @@ content-type: application/json
 ###
 
 POST http://localhost:4004/odata/v4/say/hello HTTP/1.1
-content-type: application/json
+Content-Type: application/json
 
 {
   "to": "World"
@@ -18,4 +18,3 @@ content-type: application/json
 ###
 
 GET http://localhost:4004/odata/v4/luck/randomLuck
-###
