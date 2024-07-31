@@ -16,13 +16,10 @@ export class Luck {
   randomLuck(req: Request) {
     return Math.floor(Math.random() * 100);
   }
-<<<<<<< HEAD
-};
+}
 
-module.exports = class Test {
-  teste(req:Request){
-    return "oi" + req
+export class Test {
+  teste(req: Request) {
+    return 'oi' + req;
   }
-=======
->>>>>>> 1daf61bbb9028a391e03a6ddae7764cc7f0e33eb
 }
