@@ -6,3 +6,7 @@ service Say {
 service Luck {
   function randomLuck() returns Integer;
 }
+
+service Test {
+  function teste() returns String
+}
