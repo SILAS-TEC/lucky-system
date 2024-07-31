@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucky Numbers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen p-4"
+  >
+    <h1 class="text-3xl font-bold mb-4">Lucky Number</h1>
+    <div id="luck-number" class="text-6xl font-semibold mb-6"></div>
+    <button
+      onclick="getNewNumber()"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4"
+    >
+      Generate New Number
+    </button>
+    <div class="w-full max-w-3xl overflow-x-auto">
+      <ul id="sorted-numbers" class="flex space-x-4">
+        <!-- Sorted numbers will be displayed here -->
+      </ul>
+    </div>
+
+    <script>
+      let numbers = [];
+
+      function getNewNumber() {
+        fetch('http://localhost:4004/odata/v4/luck/randomLuck')
+          .then((response) => response.json())
+          .then((data) => {
+            const number = data.value;
+            document.getElementById('luck-number').innerText = number;
+            numbers.unshift(number); // Add the new number to the beginning of the array
+            updateNumbers();
+          });
+      }
+
+      function updateNumbers() {
+        const sortedNumbersList = document.getElementById('sorted-numbers');
+        sortedNumbersList.innerHTML = '';
+        numbers.forEach((num) => {
+          const listItem = document.createElement('li');
+          listItem.innerText = num;
+          listItem.classList.add(
+            'bg-gray-800',
+            'p-4',
+            'w-16',
+            'h-16',
+            'flex',
+            'items-center',
+            'justify-center',
+            'rounded',
+            'shadow'
+          );
+          sortedNumbersList.appendChild(listItem);
+        });
+        sortedNumbersList.scrollLeft = 0; // Scroll to the beginning
+      }
+
+      getNewNumber();
+    </script>
+  </body>
+</html>
