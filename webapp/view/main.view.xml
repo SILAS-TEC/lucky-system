@@ -1,0 +1,17 @@
+<mvc:View
+    controllerName="luckyNumbers.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="{i18n>title}">
+        <content>
+            <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+                <Title text="{i18n>luckyNumber}" level="H1"/>
+                <Text id="luckyNumberText" text="" class="sapUiSmallMarginTop sapUiSmallMarginBottom" style="font-size: 3rem; font-weight: bold;"/>
+                <Button text="{i18n>generateNewNumber}" press=".onGenerateNumber" class="sapUiSmallMarginBottom"/>
+                <ScrollContainer horizontal="true" vertical="false" height="5rem" width="100%">
+                    <HBox id="sortedNumbers" class="sapUiSmallMarginTop"/>
+                </ScrollContainer>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
