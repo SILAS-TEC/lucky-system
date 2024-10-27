@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="luckyNumbers.controller.Main"
+    controllerName="luckyNumbers.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page title="{i18n>title}">
@@ -14,4 +14,4 @@
             </VBox>
         </content>
     </Page>
-</mvc:View>
+</mvc:View>   

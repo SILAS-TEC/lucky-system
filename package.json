@@ -18,11 +18,13 @@
     "@ui5/cli": "^4.0.8",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3",
-    "ui5-middleware-simpleproxy": "^3.3.0"
+    "ui5-middleware-simpleproxy": "^3.3.0",
+    "@sap/ux-specification": "UI5-1.129"
   },
   "scripts": {
-     "start": "cds-ts serve",
-     "serve:ui5": "ui5 serve"
+    "start": "cds-ts serve",
+    "serve:ui5": "ui5 serve",
+    "watch-btp-luck": "cds watch --open btp-luck/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {

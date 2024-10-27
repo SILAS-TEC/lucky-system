@@ -1,0 +1,1 @@
+using Luck as service from '../../srv/world';

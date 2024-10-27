@@ -5,13 +5,14 @@ sap.ui.define([
 ], function (Controller, Text, JSONModel) {
     "use strict";
 
-    return Controller.extend("luckyNumbers.controller.Main", {
+    return Controller.extend("luckyNumbers.controller.App", {
         onInit: function () {
             this.numbers = [];
             this.onGenerateNumber();
         },
 
         onGenerateNumber: function () {
+            console.log("cheguei")
             var that = this;
             var oModel = this.getView().getModel("luckModel");
             
@@ -25,7 +26,7 @@ sap.ui.define([
             }).catch(function (error) {
                 console.error("Error fetching lucky number:", error);
             });
-        },
+        }, 
         updateNumbers: function () {
             var sortedNumbersContainer = this.getView().byId("sortedNumbers");
             sortedNumbersContainer.removeAllItems();
