@@ -1,10 +1,11 @@
 <mvc:View
     controllerName="btpluck.controller.Viewluck"
-    xmlns:mvc="sap.ui.core.mvc"
+     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     displayBlock="true"
-    height="100%">
+    height="100%"
+    class="luckyNumberApp">
     <Page title="Lucky Numbers" class="sapUiContentPadding">
         <content>
             <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">

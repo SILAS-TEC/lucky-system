@@ -40,7 +40,7 @@ sap.ui.define([
                     text: num.toString(),
                     width: "4rem",
                     textAlign: "Center"
-                }).addStyleClass("sapUiTinyMarginEnd sapThemeHighlight-asColor sapUiTinyMarginTop sapUiTinyMarginBottom");
+                }).addStyleClass("numberBox");
                 oHBox.addItem(oText);
             });
         }
