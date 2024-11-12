@@ -1,7 +1,24 @@
-<mvc:View controllerName="btpluck.controller.Viewluck"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
+<mvc:View
+    controllerName="btpluck.controller.Viewluck"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    height="100%">
+    <Page title="Lucky Numbers" class="sapUiContentPadding">
+        <content>
+            <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+                <Title text="Lucky Number" level="H1" class="sapUiMediumMarginBottom"/>
+                <Text id="luckNumber" text="" class="sapUiLargeMarginBottom" style="font-size: 3rem; font-weight: bold;"/>
+                <Button text="Generate New Number" press=".onGenerateNumber" class="sapUiMediumMarginBottom"/>
+                <ScrollContainer
+                    horizontal="true"
+                    vertical="false"
+                    height="5rem"
+                    width="100%">
+                    <HBox id="sortedNumbers" class="sapUiSmallMarginBeginEnd"/>
+                </ScrollContainer>
+            </VBox>
+        </content>
     </Page>
 </mvc:View>

@@ -5,28 +5,26 @@ sap.ui.define([
 ], function (Controller, Text, JSONModel) {
     "use strict";
 
-    return Controller.extend("luckyNumbers.controller.App", {
+    return Controller.extend("btpluck.controller.Viewluck", {
         onInit: function () {
             this.numbers = [];
             this.onGenerateNumber();
         },
 
         onGenerateNumber: function () {
-            console.log("cheguei")
             var that = this;
-            var oModel = this.getView().getModel("luckModel");
-            
-            oModel.callFunction("/randomLuck", {
-                method: "GET"
-            }).then(function (oData) {
-                var number = oData.value;
-                that.getView().byId("luckyNumberText").setText(number);
-                that.numbers.unshift(number);
-                that.updateNumbers();
-            }).catch(function (error) {
-                console.error("Error fetching lucky number:", error);
-            });
-        }, 
+            fetch('http://localhost:4004/odata/v4/luck/randomLuck')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    var number = data.value;
+                    that.getView().byId("luckyNumberText").setText(number);
+                    that.numbers.unshift(number);
+                    that.updateNumbers();
+                });
+        },
+
         updateNumbers: function () {
             var sortedNumbersContainer = this.getView().byId("sortedNumbers");
             sortedNumbersContainer.removeAllItems();
